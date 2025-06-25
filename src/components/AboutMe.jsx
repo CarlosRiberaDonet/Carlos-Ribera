@@ -1,5 +1,5 @@
 import styles from './css/AboutMe.module.css';
-import profileImg from '../images/profile.jpg';
+import profileImg from '../images/profile.png';
 export default function AboutMe() {
   return (
     <section id="about" className={styles.about}>
