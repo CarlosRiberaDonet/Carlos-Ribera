@@ -1,4 +1,5 @@
 import styles from './css/Projects.module.css';
+import magicImg from '../images/magic.png';
 
 const projects = [
   {
@@ -8,7 +9,7 @@ const projects = [
     'Gestión personalizada de listas de cartas y visualización detallada con imágenes. Actualizaciones automáticas desde API oficial vía REST.',
     technologies: ['JAVA', 'JSON', 'JAVA SWING'],
     link: 'https://github.com/CarlosRiberaDonet/MagicManager',
-    image: '/images/magic.png',
+    image: 'magicImg',
   },
 ];
 
