@@ -9,7 +9,7 @@ const projects = [
     'Gestión personalizada de listas de cartas y visualización detallada con imágenes. Actualizaciones automáticas desde API oficial vía REST.',
     technologies: ['JAVA', 'JSON', 'JAVA SWING'],
     link: 'https://github.com/CarlosRiberaDonet/MagicManager',
-    image: 'magicImg',
+    image: magicImg,
   },
 ];
 
