@@ -15,10 +15,10 @@ const projects = [
     image: magic,
   },
   {
-    title: 'Segundo Proyecto',
-    description: 'Otro proyecto con funcionalidades distintas y un diseño limpio y responsivo.',
+    title: 'Website',
+    description: 'Desarrollo completo de la web de EneaCoachingProfesional, incluyendo diseño responsivo, integración de contenido y optimización para experiencia de usuario.',
     technologies: ['HTML', 'CSS', 'JavaScript'],
-    link: 'https://github.com/CarlosRiberaDonet/SegundoProyecto',
+    link: 'https://github.com/CarlosRiberaDonet/web-eneacoachingprofesional',
     image: otro,
   },
 ];
@@ -43,30 +43,29 @@ export default function Projects() {
           ‹
         </button>
         <article className={styles.projectCard}>
-          <img
-            src={project.image}
-            alt={`Vista previa de ${project.title}`}
-            className={styles.image}
-          />
-          <h3 className={styles.projectTitle}>{project.title}</h3>
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noreferrer"
-            className={styles.githubLink}
-            aria-label={`GitHub - ${project.title}`}
-          >
-            <FaGithub />
-          </a>
-          <ul className={styles.techList}>
-            {project.technologies.map((tech, i) => (
-              <li key={i} className={styles.techItem}>
-                {tech}
-              </li>
-            ))}
-          </ul>
-          <p className={styles.description}>{project.description}</p>
-        </article>
+  <h3 className={styles.projectTitle}>{project.title}</h3>
+  <img
+    src={project.image}
+    alt={`Vista previa de ${project.title}`}
+    className={styles.image}
+  />
+  <a
+    href={project.link}
+    target="_blank"
+    rel="noreferrer"
+    className={styles.githubLink}
+    aria-label={`GitHub - ${project.title}`}
+  >
+  </a>
+  <ul className={styles.techList}>
+    {project.technologies.map((tech, i) => (
+      <li key={i} className={styles.techItem}>
+        {tech}
+      </li>
+    ))}
+  </ul>
+  <p className={styles.description}>{project.description}</p>
+</article>
         <button
           onClick={nextProject}
           className={styles.navButton}
