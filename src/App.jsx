@@ -1,7 +1,10 @@
 import Header from './components/Header';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
-import CV from './components/CV';
+import Education from './components/Education';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import Technologies from './components/Technologies';
 
 function App() {
   return (
@@ -9,8 +12,11 @@ function App() {
       <Header />
       <main>
         <AboutMe />
+        <Technologies />
         <Projects />
-        <CV />
+        <Education />
+        <Contact />
+        <Footer />
       </main>
     </>
   );

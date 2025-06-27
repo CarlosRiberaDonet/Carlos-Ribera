@@ -60,8 +60,15 @@
   transition: width 0.3s;
 }
 
-.navLink:hover::after {
+.navLink:hover::after,
+.navLink.active::after {
   width: 100%;
+  background-color: #D4AF37;
+}
+
+/* Clase para el enlace activo - subrayado dorado */
+.active {
+  color: #D4AF37;
 }
 
 .menuToggle {
