@@ -10,8 +10,8 @@ export default function Contact() {
         <textarea name="message" rows="6" placeholder="Mensaje" required></textarea>
 
         <div className={styles.contactInfo}>
-          <p>Email: carlosriberadonet@gmail.com</p>
-          <p>Teléfono: 638662620</p>
+          <p>carlosriberadonet@gmail.com</p>
+          <p><a href="tel:638662620">638662620</a></p>
         </div>
 
         <button type="submit">Enviar</button>
