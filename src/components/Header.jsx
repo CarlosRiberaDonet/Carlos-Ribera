@@ -3,8 +3,8 @@ import styles from './css/Header.module.css';
 
 const sections = [
   { id: 'about', label: 'Sobre mí' },
-  { id: 'technologies', label: 'Tecnologías' },
   { id: 'projects', label: 'Proyectos' },
+  { id: 'technologies', label: 'Tecnologías' },
   { id: 'education', label: 'Educación' },
   { id: 'contact', label: 'Contacto' }
 ];

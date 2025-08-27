@@ -1,6 +1,7 @@
 // Projects.jsx
 import { useState } from 'react';
 import styles from './css/Projects.module.css';
+import cinehub from '../images/cinehub.png';
 import magic from '../images/magic.png';
 import otro from '../images/otro.png';
 
@@ -8,16 +9,20 @@ const projects = [
   {
     title: 'CineHub',
     description:
-      'Aplicación web que consume la API de TMDB para mostrar información actualizada sobre películas y actores/actrices.',
-    technologies: ['JAVA', 'Spring Boot', 'JavaScript', 'HTML', 'CSS', 'JSON', 'REST API'],
+      'CineHub es una aplicación web que consume la API de TMDB para mostrar información actualizada sobre películas y series.' +
+      'El backend está desarrollado en Java con Spring Boot, gestionando la lógica de negocio y las solicitudes a la API,' +
+      'mientras que el frontend utiliza JavaScript, HTML y CSS para presentar la información de forma dinámica y visualmente atractiva. CineHub permite explorar títulos,' + 
+      'ver detalles y trailers.',
+    technologies: ['Java', 'Spring Boot', 'JavaScript', 'HTML', 'CSS', 'JSON', 'REST API'],
     link: 'https://github.com/CarlosRiberaDonet/peliculasonlinehd',
-    image: magic,
+    image: cinehub,
   },
   {
     title: 'Magic Card Manager',
     description:
-      'Aplicación de escritorio para búsqueda avanzada de cartas por nombre y edición, además de ordenar resultados por nombre, edición, idioma, número de coleccionista, rareza y precio. Gestión personalizada de listas de cartas y visualización detallada con imágenes. Actualizaciones automáticas desde API oficial vía REST.',
-    technologies: ['JAVA', 'JSON', 'JAVA SWING'],
+      'Aplicación de escritorio para búsqueda avanzada de cartas por nombre y edición, además de ordenar resultados por nombre, edición, idioma, número de coleccionista,' +
+      ' rareza y precio. Gestión personalizada de listas de cartas y visualización detallada con imágenes. Actualizaciones automáticas desde API oficial vía REST.',
+    technologies: ['Java', 'JSON', 'Java Swing', 'REST API'],
     link: 'https://github.com/CarlosRiberaDonet/MagicManager',
     image: magic,
   },
