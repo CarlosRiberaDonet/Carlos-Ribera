@@ -11,7 +11,7 @@ export default function Contact() {
 
         <div className={styles.contactInfo}>
           <p>carlosriberadonet@gmail.com</p>
-          <p><a href="tel:638662620">638662620</a></p>
+          <p><a href="tel:643814810">643814810</a></p>
         </div>
 
         <button type="submit">Enviar</button>
