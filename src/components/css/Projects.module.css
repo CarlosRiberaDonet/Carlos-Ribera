@@ -97,6 +97,20 @@
   user-select: none;
 }
 
+.githubLink {
+  display: inline-flex;    
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;        
+  color: #6e5494;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.githubLink:hover {
+  color: #D4AF37;
+  transform: scale(1.2);  
+}
+
 .navButton:hover {
   color: #000000;
   background-color: #D4AF37;
@@ -118,5 +132,18 @@
   .navButton {
     font-size: 2.5rem;
     padding: 0 0.5rem;
+  }
+
+    .githubLink {
+    margin-top: 8px;        /* menos margen en móviles */
+  }
+
+  .githubLink svg {
+    width: 20px;             /* icono más pequeño */
+    height: 20px;
+  }
+
+  .navButton {
+    padding: 6px 10px;       /* botones más pequeños */
   }
 }

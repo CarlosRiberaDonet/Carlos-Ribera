@@ -1,6 +1,7 @@
 // Projects.jsx
 import { useState } from 'react';
 import styles from './css/Projects.module.css';
+import { FaGithub } from 'react-icons/fa';
 import cinehub from '../images/cinehub.png';
 import magic from '../images/magic.png';
 import otro from '../images/otro.png';
@@ -61,14 +62,6 @@ export default function Projects() {
     alt={`Vista previa de ${project.title}`}
     className={styles.image}
   />
-  <a
-    href={project.link}
-    target="_blank"
-    rel="noreferrer"
-    className={styles.githubLink}
-    aria-label={`GitHub - ${project.title}`}
-  >
-  </a>
   <ul className={styles.techList}>
     {project.technologies.map((tech, i) => (
       <li key={i} className={styles.techItem}>
@@ -77,6 +70,15 @@ export default function Projects() {
     ))}
   </ul>
   <p className={styles.description}>{project.description}</p>
+    <a
+    href={project.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.githubLink}
+    aria-label={`GitHub - ${project.title}`}
+  >
+    <FaGithub size={48} />
+  </a>
 </article>
         <button
           onClick={nextProject}
