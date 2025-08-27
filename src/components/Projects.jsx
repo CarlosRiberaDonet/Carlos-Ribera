@@ -1,11 +1,18 @@
 // Projects.jsx
 import { useState } from 'react';
-import { FaGithub } from 'react-icons/fa';
 import styles from './css/Projects.module.css';
 import magic from '../images/magic.png';
 import otro from '../images/otro.png';
 
 const projects = [
+  {
+    title: 'CineHub',
+    description:
+      'Aplicación web que consume la API de TMDB para mostrar información actualizada sobre películas y actores/actrices.',
+    technologies: ['JAVA', 'Spring Boot', 'JavaScript', 'HTML', 'CSS', 'JSON', 'REST API'],
+    link: 'https://github.com/CarlosRiberaDonet/peliculasonlinehd',
+    image: magic,
+  },
   {
     title: 'Magic Card Manager',
     description:
