@@ -1,0 +1,149 @@
+.projects {
+  padding: 4rem 2rem;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #D4AF37;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.projectCard {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.projectTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #D4AF37;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 1.2rem;
+}
+
+.techList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.techItem {
+  background: linear-gradient(135deg, #d4af37, #f8e71c);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  color: #121212;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(212, 175, 55, 0.4);
+  white-space: nowrap;
+  transition: background 0.3s ease;
+  cursor: default;
+}
+
+.techItem:hover {
+  background: linear-gradient(135deg, #f8e71c, #d4af37);
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #cccccc;
+  text-align: center;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  color: #D4AF37;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0 1rem;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.githubLink {
+  display: inline-flex;    
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;        
+  color: #6e5494;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.githubLink:hover {
+  color: #D4AF37;
+  transform: scale(1.2);  
+}
+
+.navButton:hover {
+  color: #000000;
+  background-color: #D4AF37;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+
+  .projectCard {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .navButton {
+    font-size: 2.5rem;
+    padding: 0 0.5rem;
+  }
+
+    .githubLink {
+    margin-top: 8px;        /* menos margen en móviles */
+  }
+
+  .githubLink svg {
+    width: 20px;             /* icono más pequeño */
+    height: 20px;
+  }
+
+  .navButton {
+    padding: 6px 10px;       /* botones más pequeños */
+  }
+}
