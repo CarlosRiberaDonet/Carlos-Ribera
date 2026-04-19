@@ -25,6 +25,7 @@ const projects = [
     'Frontend: React, HTML y CSS.' +
     'Rol: Desarrollo de componentes reutilizables y dinámicos, integración de contenido y diseño responsivo para asegurar una experiencia de usuario consistente en distintos dispositivos.' +
     'Lo que demuestra: capacidad para entregar un producto funcional a un cliente real, diseño de componentes escalables, adaptación a requisitos de UX y colaboración en un entorno profesional.' ,
+    webLink: 'https://eneacoachingprofesional.com/',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     link: 'https://github.com/CarlosRiberaDonet/web-eneacoachingprofesional',
     image: otro,
