@@ -16,6 +16,7 @@ const projects = [
       'Lo que demuestra: separación frontend/backend, diseño orientado a servicios, consumo controlado de APIs externas y simulación de un entorno profesional de desarrollo web.',
     technologies: ['Java', 'Spring Boot', 'JavaScript', 'HTML', 'CSS', 'JSON', 'REST API'],
     link: 'https://github.com/CarlosRiberaDonet/CineHub',
+    webLink: 'https://carlosriberadonet.github.io/CineHub/',
     image: cinehub,
   },
    {
@@ -61,11 +62,21 @@ export default function Projects() {
         </button>
         <article className={styles.projectCard}>
   <h3 className={styles.projectTitle}>{project.title}</h3>
+  {project.webLink ? (
+  <a href={project.webLink} target="_blank" rel="noopener noreferrer">
+    <img
+      src={project.image}
+      alt={`Vista previa de ${project.title}`}
+      className={styles.image}
+    />
+  </a>
+) : (
   <img
     src={project.image}
     alt={`Vista previa de ${project.title}`}
     className={styles.image}
   />
+)}
   <ul className={styles.techList}>
     {project.technologies.map((tech, i) => (
       <li key={i} className={styles.techItem}>
