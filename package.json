@@ -6,10 +6,6 @@
   "type": "module",
   "homepage": "https://carlosriberadonet.github.io/CineHub",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
