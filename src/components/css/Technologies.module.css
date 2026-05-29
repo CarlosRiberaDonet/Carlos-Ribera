@@ -5,12 +5,29 @@
   color: #e0e0e0;
   max-width: 1100px;
   margin: 0 auto;
+  position: relative;
+}
+
+.techSection::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(184, 232, 45, 0.4),
+    transparent
+  );
 }
 
 .title {
   font-size: 2.8rem;
   font-weight: 700;
-  color: #D4AF37;
+  color: white;
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -26,19 +43,19 @@
   border: 1px solid #2a2a2a;
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 12px rgba(184, 232, 45, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+  box-shadow: 0 0 12px rgba(184, 232, 45, 0.4);
 }
 
 .cardTitle {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #D4AF37;
+  color: #b8e82d;
   margin-bottom: 1rem;
   border-bottom: 2px solid #2a2a2a;
   padding-bottom: 0.3rem;

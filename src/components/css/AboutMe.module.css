@@ -1,192 +1,215 @@
-/* AboutMe.module.css */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
+.about {
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: nowrap;
-}
 
-.about {
-  padding: 1rem;
-  background-color: #0a0a0a;
+  padding: 120px 24px;
+
+  background: #0a0a0a;
   color: #e0e0e0;
-}
 
-.imageContainer {
   position: relative;
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-  text-align: center;
+  overflow: hidden;
 }
 
-.image {
+/* ENTRADA SUAVE */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  align-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 80px;
+  align-items: center;
 }
 
-.imageContainer::before,
-.imageContainer::after {
-  position: absolute;
-  font-size: 120px;
-  font-weight: 100; 
-  font-family: 'Arial Narrow', Arial, sans-serif;
-  line-height: 1;
-  color: #D4AF37;
-
-}
-
-.imageContainer::before {
-  content: "{";
-  top: 70px;
-  left: -1px;
-}
-
-.imageContainer::after {
-  content: "}";
-  top: 70px;
-  left: 155px;
-}
-
+/* IZQUIERDA */
 .textContent {
-  flex: 1 1 500px;
-  min-width: 280px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 20px;
+
+  animation: fadeUp 0.7s ease-out both;
 }
 
 .title {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
+  line-height: 1.1;
   font-weight: 700;
-  color: #D4AF37;
-  margin-bottom: 0;
-  text-align: left;
-}
 
-.dynamicText {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #D4AF37;
-  white-space: nowrap;
   margin: 0;
-  text-align: left;
+
+  color: #f5f5f5;
 }
 
-.typed {
-  color: #D4AF37;
-  white-space: nowrap;
-}
-
-.cursor {
-  display: inline-block;
-  color: #D4AF37;
-  animation: blink 1s steps(2, start) infinite;
-  font-weight: bold;
-  margin-left: 2px;
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-
-.static {
-  color: #ffffff;
+.subtitle {
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: #b8e82d;
+  margin: 0;
+  max-width: 650px;
 }
 
 .description {
   font-size: 1rem;
-  line-height: 1.6;
-  color: #cccccc;
+  line-height: 1.8;
+  color: #b3b3b3;
   margin: 0;
-  text-align: left;
+  max-width: 700px;
 }
 
+/* DERECHA */
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  animation: fadeUp 0.9s ease-out both;
+}
+
+/* FOTO + LLAVES */
+.photoWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photoWrap::before,
+.photoWrap::after {
+  position: absolute;
+  top: 65%;
+  transform: translateY(-50%);
+  font-size: 150px;
+  font-weight: 100;
+  color: #b8e82d;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  pointer-events: none;
+
+  opacity: 0.9;
+}
+
+.photoWrap::before {
+  content: "{";
+  left: -38px;
+}
+
+.photoWrap::after {
+  content: "}";
+  right: -38px;
+}
+
+.image {
+  width: 220px;
+  height: 220px;
+
+  object-fit: cover;
+  border-radius: 50%;
+
+  display: block;
+}
+
+/* LINKS */
 .links {
   display: flex;
-  gap: 1.5rem;
   align-items: center;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
+  justify-content: center;
+
+  gap: 18px;
+  flex-wrap: nowrap;
 }
 
-.links a {
-  color: #D4AF37;
-  font-weight: 600;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: color 0.3s ease, transform 0.3s ease;
-  text-decoration: none;
+/* ICONOS */
+.links a svg {
+  font-size: 38px;
+
+  color: #b8e82d;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
 }
 
-.links a:hover {
-  color: #FFD700;
-  transform: scale(1.1);
+.links a:hover svg {
+  color: #ffd700;
+  transform: scale(1.12);
 }
 
-.email {
-  font-weight: 400;
-  font-size: 1rem;
-  color: #cccccc;
-}
-
-.icon {
-  font-size: 2rem;
-}
-
-.buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
-}
-
-.button,
-.buttonSecondary {
-  padding: 0.75rem 1.5rem;
+/* BOTONES */
+.links a:nth-last-child(1),
+.links a:nth-last-child(2) {
+  height: 44px;
+  padding: 0 18px;
+  border: 1px solid #b8e82d;
   border-radius: 6px;
-  font-weight: bold;
-  font-size: 1rem;
-  text-align: center;
+  color: #b8e82d;
   text-decoration: none;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  white-space: nowrap;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
-.button {
-  background-color: #D4AF37;
-  color: #121212;
+.links a:nth-last-child(1):hover,
+.links a:nth-last-child(2):hover {
+  border-color: #ffd700;
+  color: #ffd700;
 }
 
-.button:hover {
-  background-color: #FFD700;
+/* SEPARADOR */
+.about::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 80%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(184, 232, 45, 0.4),
+    transparent
+  );
 }
 
-.buttonSecondary {
-  background-color: transparent;
-  color: #D4AF37;
-  border: 1px solid #D4AF37;
-}
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about {
+    padding: 100px 24px;
+  }
 
-.buttonSecondary:hover {
-  background-color: rgba(212, 175, 55, 0.1);
-}
-
-/* Responsive: móviles y tablet */
-@media (max-width: 992px) {
   .container {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+
+    gap: 56px;
+
     text-align: center;
   }
 
@@ -194,47 +217,69 @@
     align-items: center;
   }
 
-  .title,
-  .dynamicText,
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
   .description {
-    text-align: center;
+    max-width: 100%;
   }
 
-  .links {
-    justify-content: center;
-  }
-
-  .buttons {
-    justify-content: center;
-  }
-
-  .imageContainer {
+  .side {
     order: -1;
-    margin-bottom: 1.5rem;
+  }
+
+  .image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .photoWrap::before,
+  .photoWrap::after {
+    font-size: 120px;
   }
 }
 
-/* Móviles pequeños */
 @media (max-width: 480px) {
+  .about {
+    padding: 80px 20px;
+  }
+
   .title {
     font-size: 2rem;
   }
 
-  .dynamicText {
-    font-size: 1.3rem;
+  .subtitle {
+    font-size: 1.05rem;
   }
 
   .description {
     font-size: 0.95rem;
+    line-height: 1.7;
   }
 
-  .icon {
-    font-size: 1.8rem;
+  .links {
+    flex-wrap: wrap;
   }
 
-  .button,
-  .buttonSecondary {
-    width: 100%;
-    text-align: center;
+  .links a svg {
+    font-size: 34px;
+  }
+
+  .image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .photoWrap::before {
+    left: -28px;
+  }
+
+  .photoWrap::after {
+    right: -28px;
   }
 }

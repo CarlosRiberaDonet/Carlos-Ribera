@@ -1,13 +1,11 @@
 import styles from './css/Education.module.css';
 
 const educationData = [
-  { year: '2023 – 2025', degree: 'Técnico Superior en Desarrollo de Aplicaciones Multiplataforma, Stucom' },
+  { year: '2024 – 2026', degree: 'Técnico Superior en Desarrollo de Aplicaciones Multiplataforma, Stucom' },
   { year: '2025', degree: 'Big Data and Business Intelligence, CMA' },
   { year: '2025', degree: 'Curso Ciberseguridad, Cesur' },
   { year: '2024', degree: 'Curso Avanzado en Programación de Videojuegos con Unity y C#, Udemy' },
-  { year: '2016', degree: 'Mantenimiento Electrónico, Ceipro' },
   { year: '2013 – 2015', degree: 'Técnico en Sistemas Microinformáticos y Redes, CFP C.A.J' },
-  { year: '2006', degree: 'Curso Programador de Aplicaciones Informáticas, CFP CAJ' },
 ];
 
 export default function EducationTimeline() {

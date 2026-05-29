@@ -1,7 +1,7 @@
 /* src/components/css/Footer.module.css */
 .footer {
   background-color: #121212;
-  color: #d4af37;
+  color: #b8e82d;
   padding: 2rem 1rem;
   text-align: center;
   font-size: 0.95rem;
@@ -27,7 +27,7 @@
 }
 
 .links a {
-  color: #d4af37;
+  color: #b8e82d;
   text-decoration: none;
   transition: color 0.3s ease;
 }

@@ -1,110 +1,197 @@
-// Projects.jsx
 import { useState } from 'react';
 import styles from './css/Projects.module.css';
 import { FaGithub } from 'react-icons/fa';
+
 import cinehub from '../images/cinehub.png';
 import magic from '../images/magic.png';
 import otro from '../images/otro.png';
 
 const projects = [
   {
+    title: 'Magic Card Manager',
+
+    overview:
+      'Sistema de gestión de más de 500.000 cartas de Magic: The Gathering construido a partir de la integración de múltiples fuentes de datos externas.',
+
+    problem:
+      'Las APIs presentaban estructuras y niveles de información incompatibles entre sí. Scryfall ofrecía datos completos de las cartas, pero sin precios ni una relación consistente con CardMarket. CardMarket aportaba precios, pero solo para una parte del catálogo mediante identificadores no universales. CardTrader añadía información adicional, aunque con un modelo de datos distinto que no encajaba de forma directa con el resto.',
+
+    solution:
+      'Se diseñó un sistema de normalización y correlación de datos para construir un puente entre Scryfall, CardMarket y CardTrader. Se implementó una base de datos propia que unifica entidades de cartas, variantes y precios, resolviendo inconsistencias entre identificadores y permitiendo consultas consistentes.',
+
+    highlights: [
+      'Integración de 3 APIs heterogéneas (Scryfall, CardMarket, CardTrader)',
+      'Resolución de inconsistencias de identificadores',
+      'Construcción de base de datos unificada',
+      'Normalización de datos de múltiples formatos',
+      'Sistema propio de correlación entre fuentes externas'
+    ],
+    technologies: ['Java', 'Spring Boot', 'MySQL', 'REST API', 'JSON'],
+    link: 'https://github.com/CarlosRiberaDonet/MagicManager',
+    image: magic,
+  },
+
+  {
     title: 'CineHub',
-    description:
-      'CineHub es una aplicación web que centraliza la exploración de películas y filmografías, resolviendo la dispersión de información mediante el consumo estructurado de la API TMDB.' +
-      'Backend: Java con Spring Boot. Gestiona filtros, paginación y validación de parámetros, ofreciendo una capa de datos limpia y desacoplada. Manejo de errores implementado para robustez y escalabilidad.' +
-      'Frontend: JavaScript, HTML y CSS. Consume el backend y presenta la información de forma dinámica, permitiendo búsqueda, detalles y visualización de tráilers.' + 
-      'Lo que demuestra: separación frontend/backend, diseño orientado a servicios, consumo controlado de APIs externas y simulación de un entorno profesional de desarrollo web.',
-    technologies: ['Java', 'Spring Boot', 'JavaScript', 'HTML', 'CSS', 'JSON', 'REST API'],
+
+    overview:
+      'Sistema de búsqueda de películas con backend en Spring Boot y consumo de TMDB.',
+
+    problem:
+      'Gestión compleja de filtros dinámicos y normalización de datos provenientes de una API externa.',
+
+    solution:
+      'Backend en Spring Boot con API REST propia que centraliza la lógica de filtrado y transformación.',
+
+    highlights: [
+      'API REST propia',
+      'Filtros dinámicos',
+      'Arquitectura en capas',
+      'Integración con TMDB'
+    ],
+
+    technologies: ['Java', 'Spring Boot', 'REST API', 'TMDB', 'JavaScript'],
     link: 'https://github.com/CarlosRiberaDonet/CineHub',
     webLink: 'https://carlosriberadonet.github.io/CineHub/',
     image: cinehub,
   },
-   {
-    title: 'Website',
-    description: 'EneaCoachingProfesional es una plataforma web de contenido profesional que organiza recursos y material de desarrollo para usuarios.' +
-    'Frontend: React, HTML y CSS.' +
-    'Rol: Desarrollo de componentes reutilizables y dinámicos, integración de contenido y diseño responsivo para asegurar una experiencia de usuario consistente en distintos dispositivos.' +
-    'Lo que demuestra: capacidad para entregar un producto funcional a un cliente real, diseño de componentes escalables, adaptación a requisitos de UX y colaboración en un entorno profesional.' ,
-    webLink: 'https://eneacoachingprofesional.es/',
-    technologies: ['HTML', 'CSS', 'JavaScript'],
-    link: 'https://github.com/CarlosRiberaDonet/web-eneacoachingprofesional',
-    image: otro,
-  },
+
   {
-    title: 'Magic Card Manager',
-    description:
-      'MagicManager es una aplicación de escritorio para gestionar y explorar un catálogo de más de 500.000 cartas de Magic: The Gathering, diseñada para facilitar la búsqueda y visualización eficiente de información.' +
-      'Backend/Procesamiento de datos: Integración de API externa en JSON, almacenamiento local optimizado y uso de estructuras de datos avanzadas para mejorar rendimiento. ' +
-      'Lo que demuestra: capacidad para manejar grandes volúmenes de datos, organizar información de manera eficiente y diseñar interfaces gráficas funcionales, mostrando disciplina técnica y estructuración lógica de software.',
-    technologies: ['Java', 'JSON', 'Java Swing', 'REST API'],
-    link: 'https://github.com/CarlosRiberaDonet/MagicManager',
-    image: magic,
-  },
+    title: 'Website Cliente',
+
+    overview:
+      'Aplicación web en React desarrollada para cliente real con diseño responsive.',
+
+    problem:
+      'Necesidad de construir una interfaz mantenible y escalable para un entorno real.',
+
+    solution:
+      'Arquitectura basada en componentes reutilizables y diseño responsive.',
+
+    highlights: [
+      'Proyecto real para cliente',
+      'Componentes reutilizables',
+      'Diseño responsive',
+      'Separación clara de UI',
+    ],
+
+    technologies: ['React', 'HTML', 'CSS', 'JavaScript'],
+    link: 'https://github.com/CarlosRiberaDonet/web-eneacoachingprofesional',
+    webLink: 'https://eneacoachingprofesional.es/',
+    image: otro,
+  }
 ];
 
 export default function Projects() {
   const [index, setIndex] = useState(0);
-
-  const prevProject = () => setIndex((index - 1 + projects.length) % projects.length);
-  const nextProject = () => setIndex((index + 1) % projects.length);
-
   const project = projects[index];
+
+  const prev = () =>
+    setIndex((i) => (i - 1 + projects.length) % projects.length);
+
+  const next = () =>
+    setIndex((i) => (i + 1) % projects.length);
 
   return (
     <section id="projects" className={styles.projects}>
       <h2 className={styles.title}>Proyectos</h2>
+
       <div className={styles.container}>
-        <button
-          onClick={prevProject}
-          className={styles.navButton}
-          aria-label="Proyecto anterior"
-        >
+        <button className={styles.navButton} onClick={prev}>
           ‹
         </button>
-        <article className={styles.projectCard}>
-  <h3 className={styles.projectTitle}>{project.title}</h3>
-  {project.webLink ? (
-  <a href={project.webLink} target="_blank" rel="noopener noreferrer">
-    <img
-      src={project.image}
-      alt={`Vista previa de ${project.title}`}
-      className={styles.image}
-    />
-  </a>
-) : (
-  <img
-    src={project.image}
-    alt={`Vista previa de ${project.title}`}
-    className={styles.image}
-  />
-)}
-  <ul className={styles.techList}>
-    {project.technologies.map((tech, i) => (
-      <li key={i} className={styles.techItem}>
-        {tech}
-      </li>
-    ))}
-  </ul>
-  <p className={styles.description}>{project.description}</p>
-    <a
-    href={project.link}
-    target="_blank"
-    rel="noopener noreferrer"
-    className={styles.githubLink}
-    aria-label={`GitHub - ${project.title}`}
-  >
-    <FaGithub size={48} />
-  </a>
-</article>
-        <button
-          onClick={nextProject}
-          className={styles.navButton}
-          aria-label="Proyecto siguiente"
-        >
+
+        <article key={project.title} className={styles.card}>
+          <div className={styles.left}>
+
+            <h3 className={styles.projectTitle}>
+              {project.title}
+            </h3>
+
+            <div className={styles.block}>
+              <h4>Contexto</h4>
+              <p>{project.overview}</p>
+            </div>
+
+            <div className={styles.block}>
+              <h4>Problema</h4>
+              <p>{project.problem}</p>
+            </div>
+
+            <div className={styles.block}>
+              <h4>Solución</h4>
+              <p>{project.solution}</p>
+            </div>
+
+            <ul className={styles.highlights}>
+              {project.highlights.map((item, i) => (
+                <li key={i} className={styles.highlightItem}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <div className={styles.techGrid}>
+              {project.technologies.map((t, i) => (
+                <span key={i} className={styles.tech}>
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <div className={styles.links}>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.github}
+              >
+                <FaGithub size={28} />
+                Código
+              </a>
+
+              {project.webLink && (
+                <a
+                  href={project.webLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.demo}
+                >
+                  Demo
+                </a>
+              )}
+            </div>
+
+          </div>
+
+          <div className={styles.right}>
+            {project.webLink ? (
+              <a
+                href={project.webLink}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.imageLink}
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className={styles.image}
+                />
+              </a>
+            ) : (
+              <img
+                src={project.image}
+                alt={project.title}
+                className={styles.image}
+              />
+            )}
+          </div>
+        </article>
+
+        <button className={styles.navButton} onClick={next}>
           ›
         </button>
       </div>
     </section>
   );
 }
-

@@ -1,149 +1,252 @@
 .projects {
-  padding: 4rem 2rem;
-  background-color: #121212;
-  color: #e0e0e0;
+  width: 100%;
+  padding: 80px 24px;
+  background: #0a0a0a;
+  position: relative;
+}
+
+.projects::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(184, 232, 45, 0.4),
+    transparent
+  );
 }
 
 .title {
   font-size: 2.8rem;
-  font-weight: 700;
-  color: #D4AF37;
-  margin-bottom: 2.5rem;
   text-align: center;
+  color: #f5f5f5;
+  margin-bottom: 30px;
 }
 
+/* CONTENEDOR REALMENTE ANCHO */
 .container {
-  max-width: 1100px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
+
+  display: grid;
+  grid-template-columns: 80px 1fr 80px;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  gap: 20px;
 }
 
-.projectCard {
-  background: #1a1a1a;
-  border-radius: 12px;
-  padding: 2rem;
-  width: 100%;
-  max-width: 500px;
-  box-shadow: 0 0 24px rgba(212, 175, 55, 0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.projectTitle {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #D4AF37;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.image {
-  width: 100%;
-  max-height: 200px;
-  object-fit: contain;
-  border-radius: 10px;
-  margin-bottom: 1.2rem;
-}
-
-.techList {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.4rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.6rem;
-}
-
-.techItem {
-  background: linear-gradient(135deg, #d4af37, #f8e71c);
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-size: 0.95rem;
-  color: #121212;
-  font-weight: 600;
-  box-shadow: 0 2px 5px rgba(212, 175, 55, 0.4);
-  white-space: nowrap;
-  transition: background 0.3s ease;
-  cursor: default;
-}
-
-.techItem:hover {
-  background: linear-gradient(135deg, #f8e71c, #d4af37);
-}
-
-.description {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #cccccc;
-  text-align: center;
-}
-
+/* BOTONES LATERALES */
 .navButton {
-  background: none;
+  background: transparent;
   border: none;
-  color: #D4AF37;
+  box-shadow: none;
+  color: #b8e82d;
   font-size: 3rem;
   cursor: pointer;
-  padding: 0 1rem;
-  transition: color 0.3s ease;
-  user-select: none;
-}
+  transition: transform 0.2s ease, color 0.2s ease;
 
-.githubLink {
-  display: inline-flex;    
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 12px;        
-  color: #6e5494;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.githubLink:hover {
-  color: #D4AF37;
-  transform: scale(1.2);  
 }
 
 .navButton:hover {
-  color: #000000;
-  background-color: #D4AF37;
+  color: #d4ff5a;
+  transform: scale(1.2);
 }
 
-@media (max-width: 768px) {
+/* CARD PRINCIPAL */
+.card {
+  width: 100%;
+  max-width: none;
+
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 40px;
+
+  padding: 32px;
+
+  background: #111;
+  border: 1px solid #1f1f1f;
+  border-radius: 18px;
+
+  align-items: center;
+
+  min-height: 420px;
+
+  animation: projectFade 0.35s ease;
+}
+
+/* IZQUIERDA */
+.left {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* TITULO */
+.projectTitle {
+  font-size: 1.9rem;
+  color: #f5f5f5;
+  margin-bottom: 14px;
+}
+
+/* BLOQUES */
+.block {
+  margin-bottom: 10px;
+}
+
+.block h4 {
+  font-size: 0.85rem;
+  color: #b8e82d;
+  margin-bottom: 4px;
+}
+
+.block p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #b3b3b3;
+}
+
+/* TAGS */
+.techGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.tech {
+  font-size: 11px;
+  padding: 4px 8px;
+  background: #151515;
+  color: #b8e82d;
+  border: 1px solid #232323;
+  border-radius: 999px;
+  letter-spacing: 0.3px;
+}
+
+/* HIGHLIGHTS (lista limpia diferenciada) */
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.highlightItem {
+  font-size: 13px;
+  color: #cfcfcf;
+  line-height: 1.4;
+
+  position: relative;
+  padding-left: 14px;
+}
+
+.highlightItem::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: #b8e82d;
+}
+
+/* LINKS */
+.links {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.github {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #b8e82d;
+  text-decoration: none;
+}
+
+.github:hover {
+  color: #ffd700;
+}
+
+.demo {
+  color: #b8e82d;
+  text-decoration: none;
+  border: 1px solid #b8e82d;
+  padding: 7px 12px;
+  border-radius: 6px;
+}
+
+.demo:hover {
+  color: #ffd700;
+  border-color: #ffd700;
+}
+
+/* DERECHA */
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 420px;
+}
+
+/* IMAGEN PROTAGONISTA */
+.image {
+  width: 100%;
+  height: 100%;
+  max-height: 440px;
+  object-fit: cover;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.imageLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* ANIMACIÓN */
+@keyframes projectFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
   .container {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 0 1rem;
-    max-width: 100%;
+    grid-template-columns: 1fr;
   }
 
-  .projectCard {
-    max-width: 100%;
-    padding: 1.5rem;
+  .card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 24px;
   }
 
-  .navButton {
-    font-size: 2.5rem;
-    padding: 0 0.5rem;
+  .right {
+    min-width: auto;
+    order: -1;
   }
 
-    .githubLink {
-    margin-top: 8px;        /* menos margen en móviles */
-  }
-
-  .githubLink svg {
-    width: 20px;             /* icono más pequeño */
-    height: 20px;
-  }
-
-  .navButton {
-    padding: 6px 10px;       /* botones más pequeños */
+  .image {
+    max-height: 300px;
   }
 }

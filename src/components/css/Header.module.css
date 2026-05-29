@@ -1,6 +1,6 @@
 .header {
   background-color: #0a0a0a;
-  color: #e0c47a;
+  color: #b8e82d;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
@@ -20,7 +20,7 @@
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #e0c47a;
+  color: #b8e82d;
 }
 
 .subtitle {
@@ -43,7 +43,7 @@
 }
 
 .navLink {
-  color: #e0c47a;
+  color: #b8e82d;
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
@@ -56,19 +56,19 @@
   height: 2px;
   left: 0;
   bottom: -4px;
-  background-color: #e0c47a;
+  color: #b8e82d;
   transition: width 0.3s;
 }
 
 .navLink:hover::after,
 .navLink.active::after {
   width: 100%;
-  background-color: #D4AF37;
+  background-color: #ffd700;
 }
 
 /* Clase para el enlace activo - subrayado dorado */
 .active {
-  color: #D4AF37;
+  color: #ffd700;
 }
 
 .menuToggle {

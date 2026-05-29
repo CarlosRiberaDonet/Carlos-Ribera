@@ -4,14 +4,13 @@
   padding: 2rem;
   background-color: #121212;
   border-radius: 12px;
-  box-shadow: 0 0 24px rgba(212, 175, 55, 0.15);
   color: #e0e0e0;
 }
 
 .title {
   text-align: center;
   font-size: 2.5rem;
-  color: #D4AF37;
+  color: white;
   font-weight: 700;
   margin-bottom: 2rem;
 }
@@ -33,13 +32,13 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-  border-color: #D4AF37;
+  border-color: #b8e82d;
   outline: none;
 }
 
 button {
   padding: 0.75rem 1.5rem;
-  background-color: #D4AF37;
+  background-color: #b8e82d;
   color: #121212;
   border: none;
   border-radius: 6px;
@@ -50,17 +49,45 @@ button {
 }
 
 button:hover {
-  background-color: #FFD700;
+  background-color: #ffd700;
+  box-shadow: 0 0 12px rgba(184, 232, 45, 0.45);
 }
 
 .contactInfo {
-  margin: 1rem 0;
-  color: #D4AF37;
-  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   text-align: center;
-  font-size: 1rem;
 }
 
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* solo texto */
+.text {
+  color: #b3b3b3;
+  cursor: pointer;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+/* hover */
+.text:hover {
+  color: #ffd700;
+  text-shadow: 0 0 8px rgba(184, 232, 45, 0.35);
+}
+
+/* links dentro del texto */
+.text a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.text a:hover {
+  color: #ffd700;
+}
 
 @media (max-width: 768px) {
   .container {
