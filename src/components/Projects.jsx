@@ -50,7 +50,7 @@ const projects = [
       'Integración con TMDB'
     ],
 
-    technologies: ['Java', 'Spring Boot', 'REST API', 'TMDB', 'JavaScript'],
+    technologies: ['Java', 'Spring Boot', 'REST API', 'JSON', 'JavaScript'],
     link: 'https://github.com/CarlosRiberaDonet/CineHub',
     webLink: 'https://carlosriberadonet.github.io/CineHub/',
     image: cinehub,
