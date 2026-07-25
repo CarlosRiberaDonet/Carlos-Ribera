@@ -4,6 +4,7 @@ import { FaGithub } from 'react-icons/fa';
 
 import cinehub from '../images/cinehub.png';
 import magic from '../images/magic.png';
+import ifix from '../images/ifix.png';
 import otro from '../images/otro.png';
 
 const projects = [
@@ -29,6 +30,41 @@ const projects = [
     technologies: ['Java', 'Spring Boot', 'MySQL', 'REST API', 'JSON'],
     link: 'https://github.com/CarlosRiberaDonet/MagicManager',
     image: magic,
+  },
+
+  {
+    title: 'iFix Repair Manager',
+
+    overview:
+      'Aplicación de escritorio desarrollada para la gestión integral de un taller de reparación de dispositivos electrónicos. Centraliza clientes, dispositivos, reparaciones, facturación y documentación legal sobre una base de datos MySQL compartida en red local.',
+
+    problem:
+      'El taller necesitaba sustituir la gestión manual por una aplicación capaz de gestionar simultáneamente clientes, dispositivos y reparaciones desde varios equipos, garantizando la integridad de los datos y automatizando procesos como la emisión de facturas, recibos y el seguimiento del estado de las reparaciones.',
+
+    solution:
+      'Se diseñó una arquitectura de escritorio basada en Java Swing, JDBC y MySQL, implementando un modelo relacional normalizado y una arquitectura en capas (DAO, Controller y presentación). El sistema permite gestionar el ciclo completo de una reparación, incluyendo múltiples intervenciones técnicas, generación automática de documentación en PDF y acceso concurrente a una base de datos compartida.',
+
+    highlights: [
+      'Arquitectura en capas (DAO, Controller y Swing)',
+      'Modelo relacional normalizado en MySQL con relaciones N:M',
+      'Acceso a datos mediante JDBC y SQL puro',
+      'Gestión completa de clientes, dispositivos y reparaciones',
+      'Búsqueda y filtrado dinámico mediante múltiples criterios',
+      'Generación automática de facturas y recibos en PDF con cálculo de IVA',
+      'Funcionamiento multiusuario sobre red local'
+    ],
+
+    technologies: [
+      'Java',
+      'Swing',
+      'JDBC',
+      'MySQL',
+      'iText PDF',
+      'Maven'
+    ],
+
+    link: 'https://github.com/CarlosRiberaDonet/iFix-Repair-Manager',
+    image: ifix,
   },
 
   {

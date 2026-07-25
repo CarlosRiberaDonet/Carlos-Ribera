@@ -10,9 +10,7 @@ export default function Technologies() {
           <ul className={styles.list}>
             <li>Java</li>
             <li>Spring Boot</li>
-            <li>MySQL</li>
-            <li>API REST</li>
-            <li>Arquitectura en capas</li>
+            <li>SQL</li>
           </ul>
         </div>
         <div className={styles.card}>
@@ -26,21 +24,20 @@ export default function Technologies() {
         <div className={styles.card}>
           <h3 className={styles.cardTitle}>Herramientas</h3>
           <ul className={styles.list}>
-            <li>Spring Boot</li>
-            <li>Spring Security</li>
-            <li>Java Swing</li>
-            <li>JavaFX</li>
+            <li>Git/GitHub</li>
+            <li>IntelliJ IDEA</li>
+            <li>Android Studio</li>
+            <li>Visual Studio Code</li>
+            <li>MySQL</li>
+            <li>Postman</li>
           </ul>
         </div>
         <div className={styles.card}>
           <h3 className={styles.cardTitle}>Frameworks</h3>
           <ul className={styles.list}>
-            
-            <li>Git / GitHub</li>
-            <li>IntelliJ IDEA</li>
-            <li>Android Studio</li>
-            <li>Maven</li>
-            <li>Postman</li>
+            <li>Spring Boot</li>
+            <li>Hibernate</li>
+            <li>JPA</li>
           </ul>
         </div>
       </div>

@@ -15,7 +15,12 @@ export default function AboutMe() {
           </h2>
 
           <p className={styles.description}>
-            Desarrollador backend Java centrado en Spring Boot, APIs REST y bases de datos SQL. Actualmente desarrollo proyectos propios orientados a integración de APIs externas, autenticación con JWT y modelado de datos. He trabajado en aplicaciones que consumen y sincronizan información desde múltiples fuentes externas, gestionando persistencia, lógica de negocio y consultas optimizadas sobre MySQL. Cuento además con experiencia previa en sistemas e infraestructura IT, diagnóstico de incidencias y administración básica de entornos Windows y Linux.
+            Desarrollador backend especializado en Java y Spring Boot. Diseño e implemento aplicaciones backend con APIs REST, bases de datos SQL
+            e integración de servicios externos. Actualmente desarrollo proyectos propios donde trabajo en la sincronización de datos entre 
+            múltiples APIs, el diseño de modelos de datos relacionales y la optimización de consultas 
+            sobre SQL.
+            Mi experiencia previa en sistemas e infraestructura IT me ha proporcionado una sólida capacidad para analizar problemas complejos,
+             diagnosticar incidencias y desarrollar soluciones.
           </p>
         </div>
 
