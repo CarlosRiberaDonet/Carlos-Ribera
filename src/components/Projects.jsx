@@ -27,8 +27,9 @@ const projects = [
       'Normalización de datos de múltiples formatos',
       'Sistema propio de correlación entre fuentes externas'
     ],
-    technologies: ['Java', 'Spring Boot', 'MySQL', 'REST API', 'JSON'],
-    link: 'https://github.com/CarlosRiberaDonet/MagicManager',
+    technologies: ['Java', 'Spring Boot', 'MySQL', 'REST API', 'JSON', 'Docker'],
+    link: '',
+    webLink: 'https://magic-investor.duckdns.org/',
     image: magic,
   },
 
@@ -86,9 +87,9 @@ const projects = [
       'Integración con TMDB'
     ],
 
-    technologies: ['Java', 'Spring Boot', 'REST API', 'JSON', 'JavaScript'],
+    technologies: ['Java', 'Spring Boot', 'REST API', 'JSON', 'JavaScript', 'Docker'],
     link: 'https://github.com/CarlosRiberaDonet/CineHub',
-    webLink: 'https://carlosriberadonet.github.io/CineHub/',
+    webLink: 'https://cine-hub.duckdns.org/',
     image: cinehub,
   },
 
