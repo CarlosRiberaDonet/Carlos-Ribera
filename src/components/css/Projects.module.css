@@ -1,12 +1,12 @@
 .projects {
   width: 100%;
-  padding: 80px 24px;
+  padding: 60px 24px;
   background: #0a0a0a;
   position: relative;
+  z-index: 2;
+  isolation: isolate;
   box-sizing: border-box;
-  overflow: visible;
 }
-
 .projects::after {
   content: "";
   position: absolute;
@@ -27,21 +27,21 @@
   font-size: 2.8rem;
   text-align: center;
   color: #f5f5f5;
-  margin-bottom: 30px;
+
 }
 
 /* CONTENEDOR */
 .container {
-  width: 100%;
   max-width: 1600px;
   margin: 0 auto;
-
+  margin-bottom: 40px;
   display: grid;
-  grid-template-columns: 80px minmax(0, 1fr) 80px;
+  grid-template-columns: 80px 1fr 80px;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 
-  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
 }
 
 /* BOTONES LATERALES */
@@ -71,7 +71,7 @@
   max-width: none;
 
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  grid-template-columns: 1.6fr 1fr;
   gap: 40px;
 
   padding: 32px;
@@ -83,9 +83,10 @@
   align-items: stretch;
 
   height: 620px;
-  box-sizing: border-box;
+  min-height: 620px;
 
   animation: projectFade 0.35s ease;
+  box-sizing: border-box;
 }
 
 /* IZQUIERDA */
@@ -110,7 +111,6 @@
 .projectTitle {
   font-size: 1.9rem;
   color: #f5f5f5;
-  margin-bottom: 14px;
 }
 
 /* BLOQUES */
@@ -121,7 +121,7 @@
 .block h4 {
   font-size: 0.85rem;
   color: #b8e82d;
-  margin-bottom: 4px;
+
 }
 
 .block p {
@@ -134,7 +134,7 @@
 .techGrid {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 5px;
   margin: 12px 0;
 }
 
