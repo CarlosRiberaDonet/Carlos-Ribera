@@ -12,22 +12,27 @@ const projects = [
     title: 'Magic Card Manager',
 
     overview:
-      'Sistema de gestión de más de 500.000 cartas de Magic: The Gathering construido a partir de la integración de múltiples fuentes de datos externas.',
+      'Plataforma de gestión de colecciones y análisis de precios de cartas de Magic: The Gathering, construida sobre más de 500.000 registros procedentes de múltiples fuentes externas.',
 
     problem:
-      'Las APIs presentaban estructuras y niveles de información incompatibles entre sí. Scryfall ofrecía datos completos de las cartas, pero sin precios ni una relación consistente con CardMarket. CardMarket aportaba precios, pero solo para una parte del catálogo mediante identificadores no universales. CardTrader añadía información adicional, aunque con un modelo de datos distinto que no encajaba de forma directa con el resto.',
+      'Scryfall, CardMarket y CardTrader utilizan estructuras, identificadores y niveles de información diferentes. Scryfall proporciona los datos principales de las cartas, mientras que CardMarket y CardTrader aportan información de precios con identificadores que no siempre permiten relacionar directamente los registros entre fuentes.',
 
     solution:
-      'Se diseñó un sistema de normalización y correlación de datos para construir un puente entre Scryfall, CardMarket y CardTrader. Se implementó una base de datos propia que unifica entidades de cartas, variantes y precios, resolviendo inconsistencias entre identificadores y permitiendo consultas consistentes.',
+      'Diseñé un modelo de datos propio y un sistema de normalización y correlación que unifica la información de las tres fuentes. El backend desacopla los proveedores externos mediante una API REST propia y permite consultar los datos mediante filtros dinámicos.',
 
     highlights: [
-      'Integración de 3 APIs heterogéneas (Scryfall, CardMarket, CardTrader)',
-      'Resolución de inconsistencias de identificadores',
+      'Integración y normalización de 3 APIs externas: Scryfall, CardMarket y CardTrader.',
+      'Sistema propio de correlación para relacionar registros sin identificadores comunes.',
       'Construcción de base de datos unificada',
-      'Normalización de datos de múltiples formatos',
-      'Sistema propio de correlación entre fuentes externas'
+      'Importación de más de 500.000 registros desde un JSON de más de 3 GB mediante procesamiento en streaming con Jackson.',
+      'Persistencia híbrida con JPA/Hibernate y JDBC según las necesidades de cada consulta.',
+      'Consultas dinámicas con hasta 8 filtros combinables.',
+      'Optimización SQL que redujo tiempos de respuesta de 10-12 segundos a pocos milisegundos.',
+      'API REST propia con 14 endpoints.',
+      'Autenticación y autorización mediante Spring Security y JWT.',
+      'Dockerización y despliegue en Oracle Cloud mediante Docker Compose, proxy inverso y SSL.',
     ],
-    technologies: ['Java', 'Spring Boot', 'MySQL', 'REST API', 'JSON', 'Docker'],
+    technologies: ['Java', 'Spring Boot', 'MySQL', 'REST API', 'JPA/Hibernate','JSON', 'JDBC', 'Jackson','Docker'],
     link: '',
     webLink: 'https://magic-investor.duckdns.org/',
     image: magic,
@@ -37,22 +42,23 @@ const projects = [
     title: 'iFix Repair Manager',
 
     overview:
-      'Aplicación de escritorio desarrollada para la gestión integral de un taller de reparación de dispositivos electrónicos. Centraliza clientes, dispositivos, reparaciones, facturación y documentación legal sobre una base de datos MySQL compartida en red local.',
+      'Aplicación de escritorio para la gestión de un taller de reparación de dispositivos electrónicos. Centraliza clientes, dispositivos, reparaciones, facturación y documentación sobre una base de datos MySQL compartida en red local.',
 
     problem:
-      'El taller necesitaba sustituir la gestión manual por una aplicación capaz de gestionar simultáneamente clientes, dispositivos y reparaciones desde varios equipos, garantizando la integridad de los datos y automatizando procesos como la emisión de facturas, recibos y el seguimiento del estado de las reparaciones.',
+      'El taller necesitaba sustituir la gestión manual por una aplicación multiusuario capaz de gestionar simultáneamente clientes, dispositivos y reparaciones desde varios puestos, manteniendo la integridad de los datos y automatizando la generación de documentación.',
 
     solution:
-      'Se diseñó una arquitectura de escritorio basada en Java Swing, JDBC y MySQL, implementando un modelo relacional normalizado y una arquitectura en capas (DAO, Controller y presentación). El sistema permite gestionar el ciclo completo de una reparación, incluyendo múltiples intervenciones técnicas, generación automática de documentación en PDF y acceso concurrente a una base de datos compartida.',
+      'Diseñé una arquitectura en capas basada en Java Swing, JDBC y MySQL, con separación entre acceso a datos, lógica de aplicación y presentación. El modelo relacional permite gestionar múltiples reparaciones e intervenciones asociadas a cada dispositivo, mientras que la aplicación soporta acceso concurrente desde varios puestos sobre una base de datos compartida.',
 
     highlights: [
       'Arquitectura en capas (DAO, Controller y Swing)',
-      'Modelo relacional normalizado en MySQL con relaciones N:M',
+      'Modelo relacional normalizado en MySQL con relaciones N e integridad referencial.',
       'Acceso a datos mediante JDBC y SQL puro',
-      'Gestión completa de clientes, dispositivos y reparaciones',
+      'Gestión de clientes, dispositivos, reparaciones y estados del proceso.',
       'Búsqueda y filtrado dinámico mediante múltiples criterios',
-      'Generación automática de facturas y recibos en PDF con cálculo de IVA',
-      'Funcionamiento multiusuario sobre red local'
+      'Acceso concurrente desde varios puestos sobre una base de datos MySQL compartida en red local.',
+      'Generación automática de facturas y recibos en PDF, incluyendo cálculo de IVA.',
+      'Gestión de documentación asociada a las reparaciones.'
     ],
 
     technologies: [
@@ -72,19 +78,24 @@ const projects = [
     title: 'CineHub',
 
     overview:
-      'Sistema de búsqueda de películas con backend en Spring Boot y consumo de TMDB.',
+      'Aplicación web para consultar películas y series, desarrollada como Trabajo de Fin de Grado y calificada con un 10. El backend actúa como intermediario entre el frontend y la API externa de TMDB.',
 
     problem:
-      'Gestión compleja de filtros dinámicos y normalización de datos provenientes de una API externa.',
+      'El frontend dependía directamente de la estructura y los datos proporcionados por TMDB, mientras que las búsquedas requerían combinar diferentes criterios de filtrado y transformar las respuestas externas a un modelo propio.',
 
     solution:
-      'Backend en Spring Boot con API REST propia que centraliza la lógica de filtrado y transformación.',
+      'Diseñé un backend con Spring Boot y una API REST propia que desacopla el frontend de TMDB. El servidor centraliza la lógica de búsqueda, transforma las respuestas externas y las expone mediante un modelo de datos propio.',
 
     highlights: [
-      'API REST propia',
-      'Filtros dinámicos',
-      'Arquitectura en capas',
-      'Integración con TMDB'
+      'API REST propia con 7 endpoints.',
+      'Integración con la API de TMDB mediante consumo de servicios externos.',
+      'Transformación de respuestas JSON externas a un modelo de datos propio.',
+      'Filtros dinámicos para búsquedas combinando múltiples criterios.',
+      'Arquitectura en capas para separar controladores, lógica de negocio y acceso a datos.',
+      'Persistencia de usuarios y credenciales en MySQL.',
+      'Autenticación y almacenamiento seguro de contraseñas.',
+      'Aplicación desplegada y mantenida en producción durante casi un año.',
+      'Dockerización y despliegue en Oracle Cloud con dominio propio y SSL.'
     ],
 
     technologies: ['Java', 'Spring Boot', 'REST API', 'JSON', 'JavaScript', 'Docker'],
@@ -94,22 +105,23 @@ const projects = [
   },
 
   {
-    title: 'Website Cliente',
+    title: 'Website Eneacoaching Profesional',
 
     overview:
-      'Aplicación web en React desarrollada para cliente real con diseño responsive.',
-
+    'Sitio web desarrollado en React para un cliente real, desde la definición de requisitos hasta la publicación y mantenimiento en producción. Proyecto entregado en aproximadamente un mes.',
     problem:
-      'Necesidad de construir una interfaz mantenible y escalable para un entorno real.',
-
+    'El cliente necesitaba una presencia web profesional que pudiera presentar sus servicios de forma clara en distintos dispositivos y facilitar su visibilidad en buscadores.',
     solution:
-      'Arquitectura basada en componentes reutilizables y diseño responsive.',
+      'Desarrollé una interfaz responsive basada en componentes reutilizables, coordinando directamente con el cliente los requisitos, diseño y evolución del sitio. Tras su publicación, alcanzó la primera página de Google en aproximadamente tres meses.',
 
     highlights: [
-      'Proyecto real para cliente',
-      'Componentes reutilizables',
-      'Diseño responsive',
-      'Separación clara de UI',
+      'Proyecto desarrollado para cliente real.',
+      'Desarrollo con React y componentes reutilizables.',
+      'Diseño responsive adaptado a distintos dispositivos.',
+      'Definición de requisitos y coordinación directa con el cliente.',
+      'Publicación y mantenimiento en producción.',
+      'Optimización orientada a SEO.',
+      'Primera página de Google alcanzada en aproximadamente 3 meses.'
     ],
 
     technologies: ['React', 'HTML', 'CSS', 'JavaScript'],

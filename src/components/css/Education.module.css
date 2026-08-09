@@ -16,7 +16,8 @@
 .line {
   position: absolute;
   left: 50%;
-  top: 0;
+  top: 2rem;
+  bottom: 2rem;
   transform: translateX(-50%);
   width: 4px;
   height: 100%;

@@ -9,9 +9,10 @@ export default function Technologies() {
           <h3 className={styles.cardTitle}>Back-End</h3>
           <ul className={styles.list}>
             <li>Java</li>
-            <li>SQL</li>
             <li>Spring Boot</li>
+            <li>Spring Security</li>
             <li>REST APIs</li>
+            <li>JWT</li>
           </ul>
         </div>
         <div className={styles.card}>
@@ -23,10 +24,12 @@ export default function Technologies() {
           </ul>
         </div>
         <div className={styles.card}>
-          <h3 className={styles.cardTitle}>Base de Datos</h3>
+          <h3 className={styles.cardTitle}>Persistencia y Base de Datos</h3>
           <ul className={styles.list}>
             <li>MySQL</li>
+            <li>SQL</li>
             <li>JPA / Hibernate</li>
+            <li>JDBC</li>
           </ul>
         </div>
         <div className={styles.card}>
@@ -34,6 +37,7 @@ export default function Technologies() {
           <ul className={styles.list}>
             <li>Docker</li>
             <li>Docker Compose</li>
+            <li>Oracle Cloud</li>
             <li>Nginx Proxy Manager</li>
           </ul>
         </div> 

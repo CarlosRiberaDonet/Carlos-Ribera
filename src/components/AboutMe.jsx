@@ -15,12 +15,10 @@ export default function AboutMe() {
           </h2>
 
           <p className={styles.description}>
-            Desarrollador backend especializado en Java y Spring Boot. Diseño e implemento aplicaciones backend con APIs REST, bases de datos SQL
-            e integración de servicios externos. Actualmente desarrollo proyectos propios donde trabajo en la sincronización de datos entre 
-            múltiples APIs, el diseño de modelos de datos relacionales y la optimización de consultas 
-            sobre SQL.
-            Mi experiencia previa en sistemas e infraestructura IT me ha proporcionado una sólida capacidad para analizar problemas complejos,
-             diagnosticar incidencias y desarrollar soluciones.
+            Construyo aplicaciones backend completas, desde el diseño de la API y el modelo de datos hasta el despliegue
+            en producción. En Magic Investor proceso más de 500K registros e integré tres APIs externas, 
+            reduciendo consultas de 10-12 segundos a pocos milisegundos. 
+            6 años previos en infraestructura IT completan mi perfil técnico.
           </p>
         </div>
 
